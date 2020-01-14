@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+    <changeSet id="2" author="Jack Sparrow" runAlways="false" >
+        <sql>
+            DROP TABLE weather;
+            CREATE TABLE weather(
+            `id` int(11) NOT NULL AUTO_INCREMENT,
+            `name` varchar(45) DEFAULT NULL,
+            `temp` varchar(45) DEFAULT NULL,
+            `pressure` varchar(45) DEFAULT NULL,
+            `humidity` int(11) DEFAULT NULL,
+            `visibility` int(11) DEFAULT NULL,
+            `speed` int(11) DEFAULT NULL,
+            PRIMARY KEY (`id`)
+            );
+        </sql>
+    </changeSet>
+</databaseChangeLog>
