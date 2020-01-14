@@ -1,6 +1,9 @@
 package com.project.weatherrequest.askforweather.dao;
 
+import com.project.weatherrequest.askforweather.AskforweatherApplication;
 import com.project.weatherrequest.askforweather.entity.WeatherData;
+import com.project.weatherrequest.askforweather.restclient.WeatherInsertion;
+import com.project.weatherrequest.askforweather.restclient.openweathermap.Weather;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,9 +45,10 @@ public class WeatherDataDaoImpl implements WeatherDataDao {
         return theWeatherData;
     }
 
+    @Override
     @Transactional
-    public void saveWeatherData(WeatherData theWeatherData) {
+    public void save(WeatherData objestToSave) {
         Session currentSession = theEntityManager.unwrap(Session.class);
-        currentSession.save(theWeatherData);
+        currentSession.save(objestToSave);
     }
 }
